@@ -1,12 +1,23 @@
 import tkinter
 
+KEKKA = [
+'前世がネコだった可能性は極めて薄いです。',
+'いたって普通の人間です。',
+'特別、おかしなところはありません。',
+'やや、ネコっぽいところがあります。',
+'ネコに近い性格のようです。',
+'ネコにかなり近い性格です。',
+'前世はネコだったかもしれません。',
+'見た目は人間、中身はネコの可能性があります。'
+]
 def click_btn():
     pts = 0
     for i in range(7):
         if bvar[i].get() == True:
             pts += 1
+    nekodo = int(100*pts/7)
     text.delete('1.0', tkinter.END)
-    text.insert('1.0', 'チェックの数は' + str(pts))
+    text.insert('1.0', '＜診断結果＞\nあなたのネコ度は' + str(nekodo) + '％です。\n' + KEKKA[pts])
 
 root = tkinter.Tk()
 root.title('ネコ度診断アプリ')
