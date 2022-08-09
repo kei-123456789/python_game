@@ -11,4 +11,21 @@ button = tkinter.Button(text='診断する', font=('Time New Roman', 32), bg='li
 button.place(x=400, y=480)
 text = tkinter.Text(width=40, height=5, font=('Times New Roman', 16))
 text.place(x=320, y=30)
+
+bvar = [None]*7
+cbtn = [None]*7
+ITEM = [
+'高いところが好き',
+'ボールを見ると転がしたくなる',
+'びっくりすると髪の毛が逆立つ',
+'ネズミの玩具が気になる',
+'匂いに敏感',
+'魚の骨をしゃぶりたくなる',
+'夜、元気になる'
+]
+for i in range(7):
+    bvar[i] = tkinter.BooleanVar()
+    bvar[i].set(False)
+    cbtn[i] = tkinter.Checkbutton(text=ITEM[i], font=('Times New Roman', 12), variable=bvar[i], bg='#dfe')
+    cbtn[i].place(x=400, y=160+40*i)
 root.mainloop()
